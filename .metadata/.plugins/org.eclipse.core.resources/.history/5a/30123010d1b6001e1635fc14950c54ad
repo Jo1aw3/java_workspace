@@ -19,6 +19,8 @@ public class IncluirPizza {
         String ingredientes = tec.nextLine();
         System.out.print("Precio: ");
         double precio = tec.nextDouble();
+
+        // Limpiar el búfer del escáner
         tec.nextLine();
 
         try {
