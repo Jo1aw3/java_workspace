@@ -2,56 +2,50 @@ package pizzeria_v01;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Scanner;
 
 public class IncluirPizza {
-	
-	public static void incluyendoPizzas(Connection conexion) {
-		Scanner tec = new Scanner(System.in);
-		PreparedStatement sentencia = null;
-		ResultSet resultado = null;
-		
-		try {
-			System.out.println("ingrese el nombre de la pizza..");
-            String nombre = tec.nextLine();
-            System.out.println("ingrese los ingredientes..");
-            String ingredientes = tec.nextLine();
-            System.out.println("ingrese el precio..");
-            double precio = tec.nextDouble();
-			
-            String consultaSQL = "INSERT INTO pizza (nombre, ingredientes, precio) VALUES (?, ?, ?)";
-            
-            sentencia = conexion.prepareStatement(consultaSQL, Statement.RETURN_GENERATED_KEYS);
-            sentencia.setString(1, nombre);
-            sentencia.setString(2, ingredientes);
-            sentencia.setDouble(3, precio);
-            
-            int filasAfectadas = sentencia.executeUpdate();
-			
-            if (filasAfectadas > 0) {
-                resultado = sentencia.getGeneratedKeys();
-                if (resultado.next()) {
-                    int idGenerado = resultado.getInt(1);
-                    System.out.println("Pizza agregada con éxito. ID generado: " + idGenerado);
+
+    public static void incluyendoPizzas(Connection conexion, Scanner tec) {
+        
+        System.out.println("Ingrese los detalles de la nueva pizza:");
+        System.out.println("id: ");
+        int id = tec.nextInt();
+        System.out.print("Nombre: ");
+        tec.nextLine();
+        String nombre = tec.nextLine();
+        System.out.print("Ingredientes: ");
+        String ingredientes = tec.nextLine();
+        System.out.print("Precio: ");
+        double precio = tec.nextDouble();
+
+        // Limpiar el búfer del escáner
+        tec.nextLine();
+
+        try {
+            // Preparar la consulta SQL para insertar una nueva pizza
+            String consultaSQL = "INSERT INTO pizza (id, nombre, ingredientes, precio) VALUES (?, ?, ?, ?)";
+            try (PreparedStatement statement = conexion.prepareStatement(consultaSQL)) {
+                // Establecer los parámetros de la consulta
+            	statement.setInt(1, id);
+                statement.setString(2, nombre);
+                statement.setString(3, ingredientes);
+                statement.setDouble(4, precio);
+
+                // Ejecutar la consulta
+                int filasAfectadas = statement.executeUpdate();
+
+                if (filasAfectadas > 0) {
+                    System.out.println("Pizza agregada con éxito.");
+                } else {
+                    System.out.println("No se pudo agregar la pizza.");
                 }
-            } else {
-                System.out.println("Error al insertar la pizza.");
             }
-            
-		} catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
-        } 
-		finally {
-            try {
-                if (resultado != null) resultado.close();
-                if (sentencia != null) sentencia.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            System.out.println("Error al incluir la pizza en la base de datos.");
+        } finally {
         }
-		tec.close();
     }
 }

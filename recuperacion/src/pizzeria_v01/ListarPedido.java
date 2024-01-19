@@ -25,12 +25,14 @@ public class ListarPedido {
 			}
 		} catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("error de consulta");
         } finally {
             try {
                 if (resultado != null) resultado.close();
                 if (sentencia != null) sentencia.close();
             } catch (SQLException e) {
                 e.printStackTrace();
+                System.out.println("error al cerrar los recursos");
             }
         }
     }

@@ -13,17 +13,19 @@ public class ListarPizza {
 		
 		try {
 			sentencia = conexion.createStatement();
-			String consultaSQL = "SELECT nombre, ingredientes, precio FROM pizza";
+			String consultaSQL = "SELECT * FROM pizza";
 			resultado = sentencia.executeQuery(consultaSQL);
 			
 			while (resultado.next()) {
+				String col00 = resultado.getString("id");
 				String col01 = resultado.getString("nombre");
 				String col02 = resultado.getString("ingredientes");
 				String col03 = resultado.getString("precio");
-				System.out.println(col01 + ": " + col02 + " $" + col03);
+				System.out.println("id: " + col00 + "| " + col01 + ": " + col02 + " $" + col03);
 			}
 		} catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("error de consulta");
         } 
 		finally {
             try {
@@ -31,6 +33,7 @@ public class ListarPizza {
                 if (sentencia != null) sentencia.close();
             } catch (SQLException e) {
                 e.printStackTrace();
+                System.out.println("error al cerrar los recursos");
             }
         }
     }
