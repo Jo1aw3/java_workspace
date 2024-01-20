@@ -17,7 +17,7 @@ public class PizzaMenu {
 			do {
 				
 				System.out.println("¿que quieres hacer?");
-				System.out.println("1 listar las pizza");
+				System.out.println("1 listar las pizzas");
 				System.out.println("2 listar los usuarios");
 				System.out.println("3 listar los pedidos");
 				System.out.println("4 incluir una nueva pizza");
@@ -28,7 +28,7 @@ public class PizzaMenu {
 				
 				switch (menuNum) {
 				case 1:
-					System.out.println("listando las pizzaz..");
+					System.out.println("listando las pizzas..");
 					ListarPizza.listandoPizzas(conexion);
 					System.out.println();
 					break;
@@ -44,15 +44,17 @@ public class PizzaMenu {
 					break;
 				case 4:
 					System.out.println("¿que pizza quieres añadir?");
-					IncluirPizza.incluyendoPizzas(conexion, tec);
+					IncluirPizza.incluyendoPizza(conexion, tec);
 					System.out.println();
 					break;
 				case 5:
 					System.out.println("¿que usuario quieres añadir?");
+					IncluirUsuario.incluyendoUsuario(conexion, tec);
 					System.out.println();
 					break;
 				case 6:
-					System.out.println("¿que pedidos quieres añadir?");
+					System.out.println("¿que pedido quieres añadir?");
+					IncluirPedido.incluyendoPedido(conexion, tec);
 					System.out.println();
 					break;
 				case 0:

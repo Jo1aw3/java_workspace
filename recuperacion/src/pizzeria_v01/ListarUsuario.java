@@ -17,9 +17,10 @@ public class ListarUsuario {
 			resultado = sentencia.executeQuery(consultaSQL);
 			
 			while (resultado.next()) {
+				String col00 = resultado.getString("id");
 				String col01 = resultado.getString("nombre");
 				String col02 = resultado.getString("apellido");
-				System.out.println(col01 + " " + col02);
+				System.out.println("id: " + col00 + "| " + col01 + " " + col02);
 			}
 		} catch (SQLException e) {
             e.printStackTrace();

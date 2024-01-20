@@ -7,13 +7,11 @@ import java.util.Scanner;
 
 public class IncluirPizza {
 
-    public static void incluyendoPizzas(Connection conexion, Scanner tec) {
-        
-        System.out.println("Ingrese los detalles de la nueva pizza:");
+    public static void incluyendoPizza(Connection conexion, Scanner tec) {
         System.out.println("id: ");
         int id = tec.nextInt();
-        System.out.print("Nombre: ");
         tec.nextLine();
+        System.out.print("Nombre: ");
         String nombre = tec.nextLine();
         System.out.print("Ingredientes: ");
         String ingredientes = tec.nextLine();
@@ -22,22 +20,19 @@ public class IncluirPizza {
         tec.nextLine();
 
         try {
-            // Preparar la consulta SQL para insertar una nueva pizza
             String consultaSQL = "INSERT INTO pizza (id, nombre, ingredientes, precio) VALUES (?, ?, ?, ?)";
             try (PreparedStatement statement = conexion.prepareStatement(consultaSQL)) {
-                // Establecer los parámetros de la consulta
             	statement.setInt(1, id);
                 statement.setString(2, nombre);
                 statement.setString(3, ingredientes);
                 statement.setDouble(4, precio);
 
-                // Ejecutar la consulta
                 int filasAfectadas = statement.executeUpdate();
 
                 if (filasAfectadas > 0) {
-                    System.out.println("Pizza agregada con éxito.");
+                    System.out.println("pizza agregada con éxito.");
                 } else {
-                    System.out.println("No se pudo agregar la pizza.");
+                    System.out.println("no se pudo agregar la pizza");
                 }
             }
         } catch (SQLException e) {

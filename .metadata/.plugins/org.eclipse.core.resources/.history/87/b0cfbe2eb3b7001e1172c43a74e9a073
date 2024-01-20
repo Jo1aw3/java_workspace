@@ -1,0 +1,43 @@
+package pizzeria_v01;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class IncluirPedido {
+
+    public static void incluyendoPedido(Connection conexion, Scanner tec) {
+        System.out.println("idPizza: ");
+        int idPizza = tec.nextInt();
+        tec.nextLine();
+        System.out.println("idUsuario: ");
+        int idUsuario = tec.nextInt();
+        tec.nextLine();
+        System.out.println("idPedido: ");
+        int idPedido = tec.nextInt();
+        tec.nextLine();
+        System.out.println("cantidad: ");
+        int cantidad = tec.nextInt();
+        tec.nextLine();
+
+        try {
+            String consultaSQL = "INSERT INTO pizza (id, nombre, ingredientes, precio) VALUES (?, ?, ?, ?)";
+            try (PreparedStatement statement = conexion.prepareStatement(consultaSQL)) {
+            	
+
+                int filasAfectadas = statement.executeUpdate();
+
+                if (filasAfectadas > 0) {
+                    System.out.println("Pizza agregada con éxito.");
+                } else {
+                    System.out.println("No se pudo agregar la pizza.");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error al incluir la pizza en la base de datos.");
+        } finally {
+        }
+    }
+}
