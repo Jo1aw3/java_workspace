@@ -93,7 +93,7 @@ public class BorrarDatos {
             tec.nextLine();
 
             if (!usuarioPedido(conexion, idUsuario)) {
-                String consultaSQL = "DELETE FROM usuario WHERE id = ?";
+                String consultaSQL = "DELETE FROM pizza WHERE id = ?";
                 try (PreparedStatement statement = conexion.prepareStatement(consultaSQL)) {
                     statement.setInt(1, idUsuario);
 
