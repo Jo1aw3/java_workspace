@@ -1,0 +1,38 @@
+package pizzeria_v02;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class BorrarDatos {
+
+	public static void borrandoPizza (Connection conexion, Scanner tec) {
+		System.out.println("que pizza quieres borrar?");
+		System.out.println("id: ");
+		int idPizza = tec.nextInt();
+		tec.nextLine();	
+		
+		String consultaSQL = "DELETE FROM pedido WHERE idpizza = "+idPizza+"; DELETE FROM pizza WHERE id = "+idPizza;
+		
+		try (PreparedStatement statement = conexion.prepareStatement(consultaSQL)) {
+			
+			int hacerConsulta = statement.executeUpdate();
+			if (hacerConsulta > 0) {
+				System.out.println("se pudo borrar la pizza");
+			} else {
+           		System.out.println("no se pudo borrar la pizzas");
+            		}
+		} catch (SQLException | java.util.InputMismatchException e) {
+			e.printStackTrace();
+            System.out.println("error al borrar la pizza de la base de datos");
+        } finally {
+        	try {
+        	
+        } catch (SQLException e) {
+        	e.printStackTrace();
+            System.out.println("error al cerrar los recursos");
+        }
+    }
+	
+}

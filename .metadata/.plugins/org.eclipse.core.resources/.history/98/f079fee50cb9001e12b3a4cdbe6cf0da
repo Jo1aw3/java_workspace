@@ -1,0 +1,111 @@
+package pizzeria_v03;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class BorrarDatos {
+
+	public static void borrandoPizza (Connection conexion, Scanner tec) {
+		System.out.println("id: ");
+		int idPizza = tec.nextInt();
+		tec.nextLine();	
+		
+		String consultaSQL = "DELETE FROM pizza WHERE id = "+idPizza;
+		// implementar codigo en donde verifique que la pizza no se encuentre en ningun pedido
+		
+		try (PreparedStatement statement = conexion.prepareStatement(consultaSQL)) {
+			
+			int hacerConsulta = statement.executeUpdate();
+			if (hacerConsulta > 0) {
+				System.out.println("pizza borrada!");
+			} else {
+           		System.out.println("no hay pizza con esa id");
+            		}
+		} catch (SQLException | java.util.InputMismatchException e) {
+			e.printStackTrace();
+            System.out.println("error al borrar la pizza de la base de datos");
+        } finally {
+        }
+    }
+	
+	public static void borrandoUsuario (Connection conexion, Scanner tec) {
+		System.out.println("id: ");
+		int idUsuario = tec.nextInt();
+		tec.nextLine();	
+		
+		String consultaSQL = "DELETE FROM usuario WHERE id = "+idUsuario;
+		// implementar parte de codigo en donde verifique que el usuario no se encuentre en ningun pedido
+		
+		try (PreparedStatement statement = conexion.prepareStatement(consultaSQL)) {
+			
+			int hacerConsulta = statement.executeUpdate();
+			if (hacerConsulta > 0) {
+				System.out.println("se pudo borrar la pizza");
+			} else {
+           		System.out.println("no se pudo borrar la pizzas");
+            		}
+		} catch (SQLException | java.util.InputMismatchException e) {
+			e.printStackTrace();
+            System.out.println("error al borrar la pizza de la base de datos");
+        } finally {
+        }
+    }
+	
+	public static void borrandoPedido (Connection conexion, Scanner tec) {
+		System.out.println("id: ");
+		int idPedido = tec.nextInt();
+		tec.nextLine();	
+		
+		String consultaSQL = "DELETE FROM pizza WHERE idpedido = "+idPedido;
+		
+		try (PreparedStatement statement = conexion.prepareStatement(consultaSQL)) {
+			
+			int hacerConsulta = statement.executeUpdate();
+			if (hacerConsulta > 0) {
+				System.out.println("se pudo borrar la pizza");
+			} else {
+           		System.out.println("no se pudo borrar la pizzas");
+            		}
+		} catch (SQLException | java.util.InputMismatchException e) {
+			e.printStackTrace();
+            System.out.println("error al borrar la pizza de la base de datos");
+        } finally {
+        }
+    }
+	
+	private static boolean pizzaPedido(Connection conexion, int idPizza) throws SQLException {
+        // Verificar si la pizza con el ID proporcionado está asociada a algún pedido
+        String consultaSQL = "SELECT COUNT(*) FROM pedido WHERE idpizza = ?";
+        try (PreparedStatement statement = conexion.prepareStatement(consultaSQL)) {
+            statement.setInt(1, idPizza);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    int count = resultSet.getInt(1);
+                    return count > 0;
+                }
+            }
+        }
+        return false;
+    }
+	
+	private static boolean usuarioPedido(Connection conexion, int idUsuario) throws SQLException {
+        // Verificar si la pizza con el ID proporcionado está asociada a algún pedido
+        String consultaSQL = "SELECT COUNT(*) FROM pedido WHERE idpizza = ?";
+        try (PreparedStatement statement = conexion.prepareStatement(consultaSQL)) {
+            statement.setInt(1, idUsuario);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                if (resultSet.next()) {
+                    int count = resultSet.getInt(1);
+                    return count > 0;
+                }
+            }
+        }
+        return false;
+    }
+	
+	
+	
+}

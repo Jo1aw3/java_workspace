@@ -1,0 +1,39 @@
+package pizzeria_v02;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class BorrarDatos {
+
+	public static void borrandoPizza (Connection conexion, Scanner tec) {
+		System.out.println("que pizza quieres borrar?");
+		System.out.println("id: ");
+		
+		try {
+			int idPizza = tec.nextInt();
+			tec.nextLine();	
+			
+			if (existePizza(conexion, idPizza)) {
+				String consultaSQL = "DELETE FROM pedido WHERE idpizza = "+idPizza+"; DELETE FROM pizza WHERE id = "+idPizza;
+				
+			}
+			
+		} catch {
+			
+		}
+		
+		
+		if (existePizza(conexion, id)) {
+			
+		} else {
+			
+		}
+		
+		
+			
+			
+    }
+	
+	
+}
