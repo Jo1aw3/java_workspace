@@ -1,0 +1,22 @@
+package ejercicios02;
+
+public class Metodos {
+
+	public static double eurosAPesetas(double cantidadEnEuros) {
+        // Tasa de cambio ficticia (puedes ajustarla según tus necesidades)
+        double tasaDeCambio = 166.386;  // 1 Euro = 166.386 Pesetas (tasa de cambio ficticia)
+        
+        // Realizar la conversión
+        double cantidadEnPesetas = cantidadEnEuros * tasaDeCambio;
+        
+        return cantidadEnPesetas;
+    }
+	
+
+	public static void main(String[] args) {
+
+		
+		
+	}
+
+}

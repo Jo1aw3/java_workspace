@@ -1,0 +1,21 @@
+package ejercicios02;
+
+public class Metodos {
+
+	public static double eurosPesetas(double cantidadEuros) {
+        double tasaDeCambio = 166.386;  // 1 Euro = 166.386 Pesetas
+        
+        // Realizar la conversión
+        double cantidadEnPesetas = cantidadEuros * tasaDeCambio;
+        
+        return cantidadEnPesetas;
+    }
+	
+
+	public static void main(String[] args) {
+
+		
+		
+	}
+
+}
