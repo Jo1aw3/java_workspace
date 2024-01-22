@@ -1,10 +1,9 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=parent of bedd6e1 (pizzeria_v03 finish)
 IMPORT_FILES_AND_FOLDERS_RELATIVE=true
 IMPORT_FILES_AND_FOLDERS_TYPE=7,1
 eclipse.preferences.version=1
-<<<<<<< HEAD
-platformState=1705477330061
-=======
-platformState=1697885893721
->>>>>>> parent of bedd6e1 (pizzeria_v03 finish)
+platformState=1705477330069
 quickStart=false
 tipsAndTricks=true
