@@ -1,0 +1,16 @@
+package auriculares;
+
+public class AuricularApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Auricular au01 = new Auricular();
+		System.out.println(au01);
+		
+		Auricular au02 = new Auricular("C700N","Sony",89.99,100);
+		System.out.println(au02);
+		
+	}
+
+}
