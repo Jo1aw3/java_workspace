@@ -6,3 +6,6 @@
 1705916341420	Delete element
 1705928289838	Rename package 'moodle'
 1706005125014	Rename local variable 'num'
+1706099469644	Rename local variable 'lectxt'
+1706101863919	Rename local variable 'partes'
+1706102292806	Rename local variable 'auricular'

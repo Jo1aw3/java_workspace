@@ -1,0 +1,50 @@
+package auriculares;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class AuricularApp {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		
+//		Auricular test01 = new Auricular();
+//		System.out.println(test01);
+//		
+//		Auricular test02 = new Auricular("C700N","Sony",89.99,100);
+//		System.out.println(test02);
+		
+		
+		// cargar desde el fichero la lista de audiculares
+		
+		List<Auricular> listaAuriculares = new ArrayList<>();
+		
+		// con FileReader tomo la ruta del txt que quiero leer y lo guardo en una variable
+		FileReader fichero = new FileReader("C:\\fileReadJava\\auriculares.txt");
+		// leeo el contenido del txt y lo cargo en el buffer guardandolo en otra variable
+		BufferedReader leertxt = new BufferedReader(fichero);
+		// con el buffer ya cargado, guardare la primera linea del txt en un String con '.readLine'
+		String linea = leertxt.readLine();
+		
+		while (linea != null) {
+			String[] parte = linea.split(";");
+			
+			double precio = Double.parseDouble(parte[2]);
+	        int stock = Integer.parseInt(parte[3]);
+			Auricular auriculares = new Auricular(parte[0], parte[1], precio, stock);
+			
+			listaAuriculares.add(auriculares);
+			
+			linea = leertxt.readLine();
+		}
+		
+		for (Auricular auriculares : listaAuriculares) {
+			System.out.println(auriculares.toString());
+		}
+		
+	}
+
+}
