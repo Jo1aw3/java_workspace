@@ -39,9 +39,9 @@ public class Metodos {
 			
 		} else if (monedaIn == 'D' && monedaOut == 'B') {
 			
-		} else if (monedaIn == 'B' && monedaOut == 'E') {
-			
 		} else if (monedaIn == 'B' && monedaOut == 'D') {
+			
+		} else if (monedaIn == 'B' && monedaOut == 'E') {
 			
 		} else {
 			System.out.println("caracteres desconocidos para el programa");
@@ -52,38 +52,21 @@ public class Metodos {
 		monedaIn = Character.toUpperCase(monedaIn);
 		monedaOut = Character.toUpperCase(monedaOut);
 		
-		switch (monedaIn) {
-			case 'E':
-				if (monedaOut == 'D') {
-					
-				} else if (monedaOut == 'B') {
-					
-				} else {
-					System.out.println("caracter desconocido para el programa");
-				}
-				break;
-			case 'D':
-				if (monedaOut == 'E') {
-					
-				} else if (monedaOut == 'B') {
-					
-				} else {
-					System.out.println("caracter desconocido para el programa");
-				}
-				break;
-			case 'B':
-				if (monedaOut == 'E') {
-					
-				} else if (monedaOut == 'D') {
-					
-				} else {
-					System.out.println("caracter desconocido para el programa");
-				}
-				break;
-			default:
-				System.out.println("caracter desconocido para el programa");
+		if (monedaIn == 'E' && monedaOut == 'D') {
+			
+		} else if (monedaIn == 'E' && monedaOut == 'B') {
+			
+		} else if (monedaIn == 'D' && monedaOut == 'E') {
+			
+		} else if (monedaIn == 'D' && monedaOut == 'B') {
+			
+		} else if (monedaIn == 'B' && monedaOut == 'D') {
+			
+		} else if (monedaIn == 'B' && monedaOut == 'E') {
+			
+		} else {
+			System.out.println("caracteres desconocidos para el programa");
 		}
-		
 	}
 	
 	public static void main(String[] args) {
