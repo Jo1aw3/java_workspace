@@ -28,6 +28,7 @@ public class AlimentoApp {
                 double grasas = Double.parseDouble(parte[3].replace(",", "."));
                 double proteinas = Double.parseDouble(parte[4].replace(",", "."));
                 double carbohidratos = Double.parseDouble(parte[5].replace(",", "."));
+
                 
                 Alimento alimento = new Alimento(parte[0], parte[1], calorias, grasas, proteinas, carbohidratos, parte[6]);
                     
@@ -59,14 +60,12 @@ public class AlimentoApp {
         		case 2:
         			System.out.println("seleccionaste la opcion 2");
         			break;
-        		case 3:
-        			System.out.println("seleccionaste la opcion 3");
-        			break;
         		case 0:
         			System.out.println("hasta luego!");
         			System.exit(0);
         		default:
         			System.out.println("no exixte la opcion " + menuNum);
+        			System.out.println();
         	}
         	
         } while (menuNum != 0);
