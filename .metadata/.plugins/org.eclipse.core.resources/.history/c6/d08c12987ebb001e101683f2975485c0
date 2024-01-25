@@ -1,0 +1,17 @@
+package alimentos;
+
+public class Alimento {
+
+	private String nombre;
+	private String estado;
+	private double calorias;
+	private double grasas;
+	private double proteinas;
+	private double carbohidratos;
+	private String tipo;
+	
+	public Auricular() {
+		this.nombre
+	}
+	
+}

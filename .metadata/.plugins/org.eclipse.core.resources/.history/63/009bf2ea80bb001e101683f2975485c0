@@ -1,0 +1,41 @@
+package alimentos;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import auriculares.Auricular;
+
+public class AlimentoApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		List<Auricular> listaAlimentos= new ArrayList<>();
+
+        try (FileReader fichero = new FileReader("C:\\fileReadJava\\alimentos.txt");
+             BufferedReader leertxt = new BufferedReader(fichero)) {
+
+            String linea = leertxt.readLine();
+
+            while (linea != null) {
+                String[] parte = linea.split(";");
+                if (parte.length == 7) {
+                    Auricular auricular = new Auricular(parte[0], parte[1], Double.parseDouble(parte[2]), Integer.parseInt(parte[3]));
+                    listaAlimentos.add(auricular);
+                } else {
+                    System.out.println("Formato incorrecto en la línea: " + linea);
+                }
+
+                linea = leertxt.readLine(); // Leer la siguiente línea
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+		
+	}
+
+}

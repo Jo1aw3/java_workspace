@@ -1,6 +1,6 @@
-package ejercicios02;
+package alimentos;
 
-public class Metodos {
+public class AlimentoApp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

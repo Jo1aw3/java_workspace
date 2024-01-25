@@ -1,0 +1,33 @@
+package alimentos;
+
+public class Alimento {
+
+	private String nombre;
+	private String estado;
+	private double calorias;
+	private double grasas;
+	private double proteinas;
+	private double carbohidratos;
+	private String tipo;
+	
+	public Alimento() {
+		this.nombre = "";
+		this.estado = "";
+		this.calorias = 0.0;
+		this.grasas = 0.0;
+		this.proteinas = 0.0;
+		this.carbohidratos = 0.0;
+		this.tipo = "";
+	}
+	
+	public Alimento(String nombre, String estado, double calorias, double grasas, double proteinas, double carbohidratos, String tipo) {
+		this.nombre = nombre;
+		this.estado = estado;
+		this.calorias = calorias;
+		this.grasas = grasas;
+		this.proteinas = proteinas;
+		this.carbohidratos = carbohidratos;
+		this.tipo = tipo;
+	}
+	
+}

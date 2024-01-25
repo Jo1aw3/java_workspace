@@ -9,6 +9,7 @@ import java.util.List;
 public class AuricularAppV02 {
 
     public static void main(String[] args) {
+    	
         List<Auricular> listaAuriculares = new ArrayList<>();
 
         try (FileReader fichero = new FileReader("C:\\fileReadJava\\auriculares.txt");
