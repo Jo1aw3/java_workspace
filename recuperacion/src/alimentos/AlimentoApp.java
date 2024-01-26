@@ -44,23 +44,53 @@ public class AlimentoApp {
         
         do {
         	
-        	System.out.println("1 mostrar la lista de alimentos");
-        	System.out.println("2 indifinido");
-        	System.out.println("3 indifinido");
+//        	for (Alimento alimento : listaAlimentos) {
+//	            System.out.println(alimento.toString());
+//	        }
+        	
+        	System.out.println("1 buscador de alimentos");
+        	System.out.println("2 mostrar alimento por id");
+        	System.out.println("3 calcular calorias");
         	System.out.println("0 salir");
         	
         	menuNum = tec.nextInt();
         	switch (menuNum) {
         		case 1:
+        			String nombreAlimento;
+        			boolean binAlimento = false;
+        			System.out.println("que alimento buscas?");
+        			nombreAlimento = tec.next();
+        			
+        			System.out.println("buscando.. " + nombreAlimento);
         			for (Alimento alimento : listaAlimentos) {
-        	            System.out.println(alimento.toString());
-        	        }
+        				if (alimento.getNombre().equals(nombreAlimento)) {
+        					binAlimento = true;
+        					break;
+        				}
+        			}
+        			
+        			if (binAlimento) {
+        				System.out.println("si existe: " + nombreAlimento);
+        			} else {
+        				System.out.println("no existe: " + nombreAlimento);
+        			}
+        			
         			break;
         		case 2:
-        			System.out.println("seleccionaste la opcion 2");
+        			int idAlimento;
+        			System.err.println("numero de alimentos: " + listaAlimentos.size());
+        			System.out.println("id del alimento que quieres mostrar: ");
+        			idAlimento = tec.nextInt();
+        			
+        			if (idAlimento > listaAlimentos.size()) {
+        				System.out.println("id inreconosible");
+        			} else {
+        				System.out.println(listaAlimentos.get(idAlimento));
+        			}
+        			
         			break;
         		case 3:
-        			System.out.println("seleccionaste la opcion 3");
+        			
         			break;
         		case 0:
         			System.out.println("hasta luego!");
