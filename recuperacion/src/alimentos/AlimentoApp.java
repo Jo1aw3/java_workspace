@@ -40,7 +40,11 @@ public class AlimentoApp {
         }
 		
         Scanner tec = new Scanner(System.in);
+        // genero variables para las distintas opciones del menu
         int menuNum = 0;
+        String nombreAlimento;
+        String estadoAlimento;
+        double gramosAlimento;
         
         do {
         	
@@ -56,10 +60,10 @@ public class AlimentoApp {
         	menuNum = tec.nextInt();
         	switch (menuNum) {
         		case 1:
-        			String nombreAlimento;
         			boolean binAlimento = false;
         			System.out.println("que alimento buscas?");
-        			nombreAlimento = tec.next();
+        			tec.nextLine();
+        			nombreAlimento = tec.nextLine();
         			
         			System.out.println("buscando.. " + nombreAlimento);
         			for (Alimento alimento : listaAlimentos) {
@@ -78,11 +82,11 @@ public class AlimentoApp {
         			break;
         		case 2:
         			int idAlimento;
-        			System.err.println("numero de alimentos: " + listaAlimentos.size());
+        			System.err.println("numero de alimentos: " + (listaAlimentos.size() - 1));
         			System.out.println("id del alimento que quieres mostrar: ");
         			idAlimento = tec.nextInt();
         			
-        			if (idAlimento > listaAlimentos.size()) {
+        			if (idAlimento >= listaAlimentos.size() || idAlimento <= 0) {
         				System.out.println("id inreconosible");
         			} else {
         				System.out.println(listaAlimentos.get(idAlimento));
@@ -90,6 +94,28 @@ public class AlimentoApp {
         			
         			break;
         		case 3:
+        			boolean binCalorias = false;
+        			System.out.println("que alimento buscas?");
+        			tec.nextLine();
+        			nombreAlimento = tec.nextLine();
+        			System.out.println("cual es su estado?");
+        			estadoAlimento = tec.next();
+        			System.out.println("cuantos gramos tiene?");
+//        			¿me produce un erro a la hora de guardar los gramos en la variable?
+        			gramosAlimento = tec.nextDouble();
+        			
+        			System.out.println("calculando.. " + nombreAlimento +  ": " + estadoAlimento + ", " + gramosAlimento + "g");
+        			for (Alimento alimento : listaAlimentos) {
+        				if (alimento.getNombre().equals(nombreAlimento) && alimento.getEstado().equals(estadoAlimento) && alimento.getGrasas() == gramosAlimento) {
+        					System.out.println("calorias: " + alimento.getCalorias());
+        					binCalorias = true;
+        					break;
+        				}
+        			}
+        			
+        			if (!binCalorias) {
+        				System.out.println("no se ha encontrado el calculo");
+        			}
         			
         			break;
         		case 0:
