@@ -1,0 +1,16 @@
+package figuras;
+
+public class Rectangulo extends Figura{
+
+	private double alto;
+	private double ancho;
+	
+	
+	@Override
+	public double perimetro() {
+		return 0;
+	}
+	
+	
+	
+}

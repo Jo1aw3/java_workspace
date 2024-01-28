@@ -1,0 +1,12 @@
+1:mikel:badiola:1234:0
+2:aitor:azkarate:2323:1
+3:ana:garcia:5678:1
+4:juan:perez:abcd:0
+5:laura:lopez:qwerty:1
+6:carlos:rodriguez:pass123:1
+7:marta:fernandez:9876:0
+8:pedro:gomez:xyz456:1
+9:maria:lopez:7890:1
+10:roberto:sanchez:abcdef:0
+11:sara:ramirez:qazwsx:1
+12:david:martin:0987:0

@@ -1,0 +1,10 @@
+package usuarios;
+
+public class UsuarioApp {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

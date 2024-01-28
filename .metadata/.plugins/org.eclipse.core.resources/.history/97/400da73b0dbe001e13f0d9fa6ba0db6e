@@ -1,0 +1,23 @@
+package figuras;
+
+public class Rectangulo extends Figura{
+
+	private double alto;
+	private double ancho;
+	
+	public Figura () {
+		super();
+		this.alto = 0.0;
+		this.ancho = 0.0;
+	}
+	
+	public Figura (String color, double alto, double ancho) {
+		this
+	}
+	
+	@Override
+	public double perimetro() {
+		
+	}
+	
+}

@@ -1,0 +1,21 @@
+package usuarios;
+
+public class UsuarioCrud {
+
+	public static void listandoUsuarios() {
+		
+	}
+	
+	public static void borrarUsuario() {
+		
+	}
+	
+	public static void crearUsuario() {
+		
+	}
+	
+	public static void modificarUsuario () {
+		
+	}
+	
+}

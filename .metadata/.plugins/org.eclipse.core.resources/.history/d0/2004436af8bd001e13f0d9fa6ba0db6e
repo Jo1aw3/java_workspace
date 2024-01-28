@@ -1,0 +1,46 @@
+package usuarios;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class UsuarioCrud {
+
+	List<Usuario> listaUsuarios = new ArrayList<>();
+
+    try (FileReader fichero = new FileReader("C:\\fileReadJava\\usuarios.txt");
+         BufferedReader leertxt = new BufferedReader(fichero)) {
+
+        String linea = leertxt.readLine();
+
+        while (linea != null) {
+            String[] parte = linea.split(";");
+            Usuario usuario = new Usuario(Integer.parseInt(parte[0]), parte[1], parte[2], parte[3], parte[4], Boolean.parseBoolean(parte[5]));
+            listaUsuarios.add(usuario);
+
+            linea = leertxt.readLine(); 
+        }
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+	
+	public static void listandoUsuarios() {
+		
+	}
+	
+	public static void borrarUsuario() {
+		
+	}
+	
+	public static void crearUsuario() {
+		
+	}
+	
+	public static void editarUsuario () {
+		
+	}
+	
+}

@@ -1,0 +1,26 @@
+package usuarios;
+
+import java.util.Scanner;
+
+public class UsuarioApp {
+
+	public static void main(String[] args) {
+		
+		Scanner tec = new Scanner(System.in);
+		int numeroMenu
+		
+		do {
+			
+		System.out.println("1 mostrar los usuarios");
+		System.out.println("2 eliminar un usuario");	
+		System.out.println("3 crear un usuario");	
+		System.out.println("4 modificar un usuario");	
+		System.out.println("0 salir");	
+			
+		} while (numeroMenu != 0)
+		
+			
+		tec.close();
+	}
+
+}

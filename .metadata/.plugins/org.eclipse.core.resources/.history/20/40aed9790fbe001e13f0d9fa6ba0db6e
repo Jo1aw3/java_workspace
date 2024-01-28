@@ -1,0 +1,13 @@
+package figuras;
+
+public class FiguraMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Rectangulo rec = new Rectangulo("naranja", 10, 7);
+		System.out.println(rec.perimetro());
+		
+	}
+
+}
