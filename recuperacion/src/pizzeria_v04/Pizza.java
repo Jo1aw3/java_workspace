@@ -1,7 +1,6 @@
 package pizzeria_v04;
 
 import java.util.Objects;
-import java.util.Scanner;
 
 public class Pizza {
 
@@ -81,18 +80,6 @@ public class Pizza {
 	@Override
 	public String toString() {
 		return "Pizza [id=" + id + ", nombre=" + nombre + ", ingredientes=" + ingredientes + ", precio=" + precio + "]";
-	}
-	
-	public void leerTec(Scanner tec) {
-		System.out.println("id:");
-		this.id = tec.nextInt();
-		System.out.println("nombre:");
-		this.nombre = tec.next();
-		tec.nextLine();
-		System.out.println("ingredientes:");
-		this.ingredientes = tec.nextLine();
-		System.out.println("precio:");
-		this.precio = tec.nextDouble();
 	}
 	
 }

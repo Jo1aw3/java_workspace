@@ -1,7 +1,6 @@
 package pizzeria_v04;
 
 import java.util.Objects;
-import java.util.Scanner;
 
 public class Usuario {
 
@@ -65,15 +64,6 @@ public class Usuario {
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + "]";
-	}
-	// ¿ con 'this' o sin 'this'?
-	public void leerTec(Scanner tec) {
-		System.out.println("id:");
-		id = tec.nextInt();
-		System.out.println("nombre:");
-		nombre = tec.next();
-		System.out.println("apellido:");
-		apellido = tec.next();
 	}
 	
 }

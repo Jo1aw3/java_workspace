@@ -1,0 +1,37 @@
+package pizzeria_v04;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class IncluirDatos {
+	
+	public static void incluirPizza(ArrayList<Pizza> pizzaList, Scanner tec) {
+		System.out.println("¿que pizza quieres añadir?");
+		Pizza pizza = new Pizza();
+		
+		if (pizzaList.contains(pizza)) {
+			System.out.println("la pizza ya existe");
+		} else {
+			pizzaList.add(pizza);
+			System.out.println("pizza añadida!");
+		}
+		System.out.println();
+	}
+	
+	public static void incluirUsuario(ArrayList<Usuario> usuarioList) {
+		System.out.println("listando los usuarios..");
+		for (Usuario usuario : usuarioList) {
+			System.out.println(usuario);
+		}
+		System.out.println();
+	}
+	
+	public static void incluirPedido(ArrayList<Pedido> pedidoList) {
+		System.out.println("listando los pedidos..");
+		for (Pedido pedido : pedidoList) {
+			System.out.println(pedido);
+		}
+		System.out.println();
+	}
+	
+}

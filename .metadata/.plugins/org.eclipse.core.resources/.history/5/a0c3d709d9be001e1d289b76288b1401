@@ -1,0 +1,44 @@
+package pizzeria_v04;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class IncluirDatos {
+	
+	public static void incluirPizza(ArrayList<Pizza> pizzaList, Scanner tec) {
+		System.out.println("id:");
+		int id = tec.nextInt();
+		tec.nextLine();
+		System.out.println("nombre:");
+		String nombre = tec.nextLine();
+		System.out.println("ingredientes:");
+		String ingredientes = tec.nextLine();
+		System.out.println("precio:");
+		double precio = tec.nextDouble();
+		
+		Pizza pizza = new Pizza(id, nombre, ingredientes, precio);
+		
+		if (pizzaList.contains(pizza)) {
+			System.out.println("la pizza ya existe");
+		} else {
+			pizzaList.add(pizza);
+			System.out.println("pizza añadida!");
+		}
+		System.out.println();
+	}
+	
+	public static void incluirUsuario(ArrayList<Usuario> usuarioList, Scanner tec) {
+		System.out.println("id:");
+		int id = tec.nextInt();
+		tec.nextLine();
+		System.out.println("nombre:");
+		String nombre = tec.next();
+		System.out.println("apellido:");
+		String apellido = tec.next();
+	}
+	
+	public static void incluirPedido(ArrayList<Pedido> pedidoList, Scanner tec) {
+		
+	}
+	
+}
