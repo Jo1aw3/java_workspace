@@ -1,0 +1,18 @@
+package pizzeria_v04;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class MainPizza {
+
+	public static void main(String[] args) {
+
+		Scanner tec = new Scanner(System.in);
+		
+		ArrayList<Pizza> pizzaList = new ArrayList<Pizza>();
+		ArrayList<Usuario> usuarioList = new ArrayList<Usuario>();
+		ArrayList<Pedido> pedidoList = new ArrayList<Pedido>();
+		
+	}
+
+}

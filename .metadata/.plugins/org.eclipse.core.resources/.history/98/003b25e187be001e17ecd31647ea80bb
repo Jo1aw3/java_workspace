@@ -1,0 +1,17 @@
+package pizzeria_v04;
+
+public class Pedido {
+
+	private int idpizza;
+	private int idusuario;
+	private int idpedido;
+	private int cantidad;
+	
+	public Pedido(int idpizza, int idusuario, int idpedido, int cantidad) {
+		this.idpizza = idpizza;
+		this.idusuario = idusuario;
+		this.idpedido = idpedido;
+		this.cantidad = cantidad;
+	}
+	
+}

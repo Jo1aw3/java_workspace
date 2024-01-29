@@ -1,0 +1,47 @@
+package pizzeria_v04;
+
+public class Pizza {
+
+	// propiedades
+	private int id;
+	private String nombre;
+	private String ingredientes;
+	private double precio;
+	
+	// constructor con parametros
+	public Pizza(int id, String nombre, String ingredientes, double precio) {
+		this.id = id;
+		this.nombre = nombre;
+		this.ingredientes = ingredientes;
+		this.precio = precio;
+	}
+
+	// metodos para obtener y poner
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public String getIngredientes() {
+		return ingredientes;
+	}
+	public void setIngredientes(String ingredientes) {
+		this.ingredientes = ingredientes;
+	}
+	public double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+	
+	
+	
+}

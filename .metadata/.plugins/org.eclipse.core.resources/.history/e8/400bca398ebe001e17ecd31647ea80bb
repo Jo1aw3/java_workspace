@@ -1,0 +1,36 @@
+package pizzeria_v04;
+
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class MainPizza {
+
+	public static void main(String[] args) {
+
+		Scanner tec = new Scanner(System.in);
+		
+		// genero un arrayList para cada clase
+		ArrayList<Pizza> pizzaList = new ArrayList<Pizza>();
+		ArrayList<Usuario> usuarioList = new ArrayList<Usuario>();
+		ArrayList<Pedido> pedidoList = new ArrayList<Pedido>();
+		
+		// guardo en cada arraylist los datos de la BD desde su respectiva tabla
+		Statement sentencia;
+		ResultSet resultado;
+		
+		try {
+			String url = "jdbc:mysql://localhost/pizzeria";
+			String user = "root";
+			String pass = "";
+			Connection conexion = DriverManager
+			
+			
+		} catch () {
+			
+		}
+		
+	}
+
+}

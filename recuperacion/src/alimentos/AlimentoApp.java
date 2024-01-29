@@ -101,7 +101,7 @@ public class AlimentoApp {
         			System.out.println("cual es su estado?");
         			estadoAlimento = tec.next();
         			System.out.println("cuantos gramos tiene?");
-//        			¿me produce un erro a la hora de guardar los gramos en la variable?
+//        			¿me produce un error a la hora de guardar los gramos en la variable?
         			gramosAlimento = tec.nextDouble();
         			
         			System.out.println("calculando.. " + nombreAlimento +  ": " + estadoAlimento + ", " + gramosAlimento + "g");
