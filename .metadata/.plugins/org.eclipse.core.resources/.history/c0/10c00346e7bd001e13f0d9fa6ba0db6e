@@ -1,9 +1,0 @@
-package usuarios;
-
-public class UsuarioCrud {
-
-	public static void listandoUsuario() {
-		
-	}
-	
-}
