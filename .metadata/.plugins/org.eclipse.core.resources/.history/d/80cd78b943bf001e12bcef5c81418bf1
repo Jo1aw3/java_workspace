@@ -71,6 +71,7 @@ public class PizzaMenu {
 				PonerDatos.ponerPizzas(pizzaList, conexion);
 				PonerDatos.ponerUsuarios(usuarioList, conexion);
 				PonerDatos.ponerPedidos(pedidoList, conexion);
+				System.exit(0);
 			}
 			
 		} while(menu != 0);
